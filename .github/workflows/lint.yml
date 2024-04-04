@@ -1,4 +1,4 @@
-name: Build
+name: Lint
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [ "master" ]
 
 jobs:
-  build:
+  lint:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,7 +24,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build
-        run: |
-          npm run bundle
-          npm run bundle-min
+      - name: commitlint
+        run: npm run commitlint
+
+      - name: lint
+        run: npm run lint
