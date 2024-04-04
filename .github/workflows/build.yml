@@ -26,3 +26,8 @@ jobs:
         run: |
           npm run bundle
           npm run bundle-min
+
+  test:
+    needs: build
+    uses: ./.github/workflows/test.yml
+
