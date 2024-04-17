@@ -10,6 +10,7 @@ jobs:
     uses: d3fc/d3fc/.github/workflows/development.yml@main
 
   publish-npm:
+    name: Publish npm package(s)
     needs: build-test-lint
     runs-on: ubuntu-latest
     steps:
